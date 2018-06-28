@@ -1,12 +1,13 @@
 import sys
 import csv
 
-a = input("Select contact owner")
-print(a)
-
-for i, line in enumerate(sys.stdin):
-    if i < 6:
+reader = csv.reader(sys.stdin)
+for i, line in enumerate(reader):
+    if i < 7:
         continue
+
+    if i == 7:
+        line = ['company', 'department', 'jobtitle', 'lastname', 'email', 'zip', 'state', 'phone', line[8], line[9], 'fax', 'mobilephone', 'website']
 
     print(line)
 
